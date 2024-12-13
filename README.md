@@ -87,7 +87,7 @@ To run all folds:
    ```
    This will load predictions from all folds, average them, and compute final ensemble metrics.
 
-## Interpreting Results
+## Interpreting Benchmark Results (Included Synthetic Dataset)
 
 - **High Accuracy (~97%+), F1 (~0.98+), Precision (~0.98), and Recall (~0.99+):**  
   Exceptional performance, indicating the model is highly effective at identifying and correctly labeling instances.
