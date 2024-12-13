@@ -1,0 +1,36 @@
+defaults:
+  - _self_
+
+trainer:
+  max_epochs: 30
+  accelerator: gpu
+  devices: 1
+  enable_checkpointing: true
+  log_every_n_steps: 500
+  precision: 16-mixed
+  strategy: auto
+  accumulate_grad_batches: 1
+  gradient_clip_val: 1.0
+
+data:
+  num_samples: 1000000
+  num_features: 200
+  test_size: 0.2
+  k_folds: 5
+  current_fold: 0
+  seed: 42
+  batch_size: 1024
+  num_workers: 8
+  persistent_workers: true
+
+model:
+  input_dim: ${data.num_features}
+  hidden_layers: [4096, 4096, 4096, 4096]
+  output_dim: 1
+  lr: 0.001
+  weight_decay: 1e-5
+  dropout: 0.1
+
+logging:
+  mlflow_experiment_name: "Episteme_Final_Ensemble"
+  mlflow_tracking_uri: "file:./mlruns"

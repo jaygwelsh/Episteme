@@ -1,0 +1,4 @@
+trainer:
+  accelerator: gpu
+  devices: 2  # or more if available
+  strategy: ddp
